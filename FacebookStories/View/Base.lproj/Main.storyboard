@@ -1,24 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V3N-Ei-CVE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Bienvenue-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AuthViewController" customModule="FacebookStories" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NYp-mS-V8c">
+                                <rect key="frame" x="20" y="108" width="374" height="32"/>
+                                <color key="backgroundColor" name="Blue Facebook"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="GZZ-6T-Wtz"/>
+                                    <constraint firstAttribute="height" constant="31" id="t2I-sr-PV5"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Connexion"/>
+                                    <segment title="Inscription"/>
+                                </segments>
+                                <color key="tintColor" name="Background Grey"/>
+                                <color key="selectedSegmentTintColor" name="White"/>
+                                <connections>
+                                    <action selector="segmentedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="wGa-0a-oL3"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3a-ao-KVu">
+                                <rect key="frame" x="0.0" y="832" width="414" height="30"/>
+                                <color key="backgroundColor" name="Blue Facebook"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sOx-2F-dMQ"/>
+                                </constraints>
+                                <state key="normal" title="Se connecter">
+                                    <color key="titleColor" name="White"/>
+                                </state>
+                                <connections>
+                                    <action selector="validateBtnDidPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="olq-wk-c52"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJu-lL-NnJ">
+                                <rect key="frame" x="20" y="213" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="9Ti-i7-tZH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pseudo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ok5-jI-8rN">
+                                <rect key="frame" x="20" y="267" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="wJ5-xG-gP9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="nickname"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="elA-4H-ofb">
+                                <rect key="frame" x="20" y="159" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="1jG-yN-y6l"/>
+                                </constraints>
+                                <color key="textColor" name="BlackGrey"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Logo FacebookStories Blue" translatesAutoresizingMaskIntoConstraints="NO" id="of2-iS-GuB">
+                                <rect key="frame" x="143" y="384" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="5Z2-jX-EEk"/>
+                                    <constraint firstAttribute="width" constant="128" id="gJJ-jU-Dgw"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="Background Grey"/>
+                        <constraints>
+                            <constraint firstItem="of2-iS-GuB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9XG-Nl-Tyd"/>
+                            <constraint firstItem="SJu-lL-NnJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AQx-WQ-Hdz"/>
+                            <constraint firstItem="ok5-jI-8rN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Frf-kf-1Xh"/>
+                            <constraint firstItem="of2-iS-GuB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LhG-ek-ovH"/>
+                            <constraint firstItem="elA-4H-ofb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VqK-i2-oLq"/>
+                            <constraint firstItem="ok5-jI-8rN" firstAttribute="top" secondItem="SJu-lL-NnJ" secondAttribute="bottom" constant="20" id="WA8-3Q-2yG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SJu-lL-NnJ" secondAttribute="trailing" constant="20" id="Wgf-EP-HgG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X3a-ao-KVu" secondAttribute="bottom" id="Ye1-2r-eFh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="elA-4H-ofb" secondAttribute="trailing" constant="20" id="ZZC-vF-J21"/>
+                            <constraint firstItem="X3a-ao-KVu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c6B-Bl-Ylw"/>
+                            <constraint firstItem="X3a-ao-KVu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="edm-DV-g2V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ok5-jI-8rN" secondAttribute="trailing" constant="20" id="iAL-yR-C4p"/>
+                            <constraint firstItem="NYp-mS-V8c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kkQ-OO-qbH"/>
+                            <constraint firstItem="of2-iS-GuB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lUC-JM-BcF"/>
+                            <constraint firstItem="elA-4H-ofb" firstAttribute="top" secondItem="NYp-mS-V8c" secondAttribute="bottom" constant="20" id="loI-a4-3Hb"/>
+                            <constraint firstItem="NYp-mS-V8c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="pac-OF-kym"/>
+                            <constraint firstItem="SJu-lL-NnJ" firstAttribute="top" secondItem="elA-4H-ofb" secondAttribute="bottom" constant="20" id="qee-9f-GNE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NYp-mS-V8c" secondAttribute="trailing" constant="20" id="tMh-bW-BNA"/>
+                            <constraint firstItem="of2-iS-GuB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="y2f-B0-fdZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Bienvenue" id="LFY-ge-gtU"/>
+                    <connections>
+                        <outlet property="emailTF" destination="elA-4H-ofb" id="MWA-1d-gbs"/>
+                        <outlet property="nicknameTF" destination="ok5-jI-8rN" id="nCL-6V-2EN"/>
+                        <outlet property="passwordTF" destination="SJu-lL-NnJ" id="dNQ-mQ-v6V"/>
+                        <outlet property="segmentedControl" destination="NYp-mS-V8c" id="rdn-YQ-WL3"/>
+                        <outlet property="validateBtn" destination="X3a-ao-KVu" id="Xbc-nm-8b6"/>
+                        <segue destination="pfp-gz-F0N" kind="show" identifier="segueToMain" id="kWL-sb-Ubj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="114.50892857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GI7-jr-X2y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V3N-Ei-CVE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XId-mx-a1N">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="i4R-OA-Pxd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XSn-Ne-N8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="8Eq-gC-wNZ">
+            <objects>
+                <viewController id="pfp-gz-F0N" customClass="MainViewController" customModule="FacebookStories" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OSD-rD-jJy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Background Grey"/>
+                        <viewLayoutGuide key="safeArea" id="EWl-ri-3lR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nbz-eF-ZgT">
+                        <barButtonItem key="leftBarButtonItem" title="Déconnexion" id="msA-Cl-hKu">
+                            <color key="tintColor" name="Blue Facebook"/>
+                            <connections>
+                                <action selector="logoutBtnDidPressed:" destination="pfp-gz-F0N" id="cqz-hX-P0o"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Ajouter" image="plus" catalog="system" id="UAa-0t-IJm">
+                            <color key="tintColor" name="Blue Facebook"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDI-c7-ATN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1893" y="115"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo FacebookStories Blue" width="256" height="256"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="Background Grey">
+            <color red="0.91399997472763062" green="0.92199999094009399" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BlackGrey">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Blue Facebook">
+            <color red="0.2199999988079071" green="0.3449999988079071" blue="0.59600001573562622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

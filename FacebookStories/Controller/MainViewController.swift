@@ -10,13 +10,27 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    var credentialsCollection: [Credentials] = []
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func logoutBtnDidPressed(_ sender: Any) {
+        if let error = FireAuth().signOut() {
+           let alertVC = UIAlertController(title: "Erreur !", message: error, preferredStyle: .alert)
+           alertVC.addAction(UIAlertAction(title: "J’ai compris", style: .default, handler: nil))
+           present(alertVC, animated: true, completion: nil)
+           return
+       }
+       navigationController?.popViewController(animated: true)
+        print("DECONNEXION")
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -28,3 +42,18 @@ class MainViewController: UIViewController {
     */
 
 }
+
+extension MainViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return credentialsCollection.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "credentialsCell", for: indexPath)
+        cell.textLabel?.text = credentialsCollection[indexPath.row].title
+        return cell
+    }
+}
+

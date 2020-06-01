@@ -3,27 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0449EBF424850B8600E3E5AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449EBF324850B8600E3E5AE /* AppDelegate.swift */; };
 		0449EBF624850B8600E3E5AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449EBF524850B8600E3E5AE /* SceneDelegate.swift */; };
-		0449EBF824850B8600E3E5AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449EBF724850B8600E3E5AE /* ViewController.swift */; };
+		0449EBF824850B8600E3E5AE /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449EBF724850B8600E3E5AE /* AuthViewController.swift */; };
 		0449EBFB24850B8600E3E5AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0449EBF924850B8600E3E5AE /* Main.storyboard */; };
 		0449EBFD24850B8D00E3E5AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0449EBFC24850B8D00E3E5AE /* Assets.xcassets */; };
 		0449EC0024850B8D00E3E5AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0449EBFE24850B8D00E3E5AE /* LaunchScreen.storyboard */; };
+		0456A7DA24852F390096DFB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0456A7D924852F390096DFB9 /* GoogleService-Info.plist */; };
+		0470DDC5248547A10056A146 /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470DDC4248547A10056A146 /* FireAuth.swift */; };
+		0470DDC724854BD50056A146 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470DDC624854BD50056A146 /* MainViewController.swift */; };
+		0470DDC924854C0F0056A146 /* FireDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470DDC824854C0F0056A146 /* FireDB.swift */; };
+		0470DDCB24854C4B0056A146 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470DDCA24854C4B0056A146 /* Credentials.swift */; };
+		8FD1CC8E59482EE877948C35 /* Pods_FacebookStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E75F4607695B9A97364864 /* Pods_FacebookStories.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0449EBF024850B8600E3E5AE /* FacebookStories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookStories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0449EBF324850B8600E3E5AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0449EBF524850B8600E3E5AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0449EBF724850B8600E3E5AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0449EBF724850B8600E3E5AE /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		0449EBFA24850B8600E3E5AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0449EBFC24850B8D00E3E5AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0449EBFF24850B8D00E3E5AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0449EC0124850B8D00E3E5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0449EC0824850EDF00E3E5AE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		0449EC0924850EDF00E3E5AE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0456A7D924852F390096DFB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0470DDC4248547A10056A146 /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
+		0470DDC624854BD50056A146 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0470DDC824854C0F0056A146 /* FireDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDB.swift; sourceTree = "<group>"; };
+		0470DDCA24854C4B0056A146 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		7ED9DE6EF521A577D78CB77B /* Pods-FacebookStories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookStories.release.xcconfig"; path = "Target Support Files/Pods-FacebookStories/Pods-FacebookStories.release.xcconfig"; sourceTree = "<group>"; };
+		A2AF4E515EADF3945CEECF24 /* Pods-FacebookStories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookStories.debug.xcconfig"; path = "Target Support Files/Pods-FacebookStories/Pods-FacebookStories.debug.xcconfig"; sourceTree = "<group>"; };
+		C9E75F4607695B9A97364864 /* Pods_FacebookStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacebookStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FD1CC8E59482EE877948C35 /* Pods_FacebookStories.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +59,8 @@
 			children = (
 				0449EBF224850B8600E3E5AE /* FacebookStories */,
 				0449EBF124850B8600E3E5AE /* Products */,
+				3B166FBAD10778D6E272F9C9 /* Pods */,
+				405E66D6BBF8F586C0AE6A60 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +75,69 @@
 		0449EBF224850B8600E3E5AE /* FacebookStories */ = {
 			isa = PBXGroup;
 			children = (
-				0449EBF324850B8600E3E5AE /* AppDelegate.swift */,
-				0449EBF524850B8600E3E5AE /* SceneDelegate.swift */,
-				0449EBF724850B8600E3E5AE /* ViewController.swift */,
-				0449EBF924850B8600E3E5AE /* Main.storyboard */,
-				0449EBFC24850B8D00E3E5AE /* Assets.xcassets */,
-				0449EBFE24850B8D00E3E5AE /* LaunchScreen.storyboard */,
 				0449EC0124850B8D00E3E5AE /* Info.plist */,
+				0449EC0C24850EFD00E3E5AE /* Model */,
+				0449EC0B24850EF800E3E5AE /* View */,
+				0449EC0A24850EEE00E3E5AE /* Controller */,
+				0449EC0724850EA900E3E5AE /* Supporting files */,
 			);
 			path = FacebookStories;
+			sourceTree = "<group>";
+		};
+		0449EC0724850EA900E3E5AE /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				0456A7D924852F390096DFB9 /* GoogleService-Info.plist */,
+				0449EBFE24850B8D00E3E5AE /* LaunchScreen.storyboard */,
+				0449EBFC24850B8D00E3E5AE /* Assets.xcassets */,
+				0449EBF524850B8600E3E5AE /* SceneDelegate.swift */,
+				0449EBF324850B8600E3E5AE /* AppDelegate.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		0449EC0A24850EEE00E3E5AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0449EBF724850B8600E3E5AE /* AuthViewController.swift */,
+				0470DDC624854BD50056A146 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0449EC0B24850EF800E3E5AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0449EBF924850B8600E3E5AE /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0449EC0C24850EFD00E3E5AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0470DDC4248547A10056A146 /* FireAuth.swift */,
+				0470DDC824854C0F0056A146 /* FireDB.swift */,
+				0470DDCA24854C4B0056A146 /* Credentials.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3B166FBAD10778D6E272F9C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF4E515EADF3945CEECF24 /* Pods-FacebookStories.debug.xcconfig */,
+				7ED9DE6EF521A577D78CB77B /* Pods-FacebookStories.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		405E66D6BBF8F586C0AE6A60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9E75F4607695B9A97364864 /* Pods_FacebookStories.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0449EC0424850B8D00E3E5AE /* Build configuration list for PBXNativeTarget "FacebookStories" */;
 			buildPhases = (
+				71AD868C7E0B68B2C8CC1D3D /* [CP] Check Pods Manifest.lock */,
 				0449EBEC24850B8600E3E5AE /* Sources */,
 				0449EBED24850B8600E3E5AE /* Frameworks */,
 				0449EBEE24850B8600E3E5AE /* Resources */,
+				27864CCE1F214B69D96D587C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -109,6 +184,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 0449EBE724850B8600E3E5AE;
 			productRefGroup = 0449EBF124850B8600E3E5AE /* Products */;
@@ -126,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0449EC0024850B8D00E3E5AE /* LaunchScreen.storyboard in Resources */,
+				0456A7DA24852F390096DFB9 /* GoogleService-Info.plist in Resources */,
 				0449EBFD24850B8D00E3E5AE /* Assets.xcassets in Resources */,
 				0449EBFB24850B8600E3E5AE /* Main.storyboard in Resources */,
 			);
@@ -133,14 +210,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27864CCE1F214B69D96D587C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FacebookStories/Pods-FacebookStories-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FacebookStories/Pods-FacebookStories-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FacebookStories/Pods-FacebookStories-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71AD868C7E0B68B2C8CC1D3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FacebookStories-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0449EBEC24850B8600E3E5AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0449EBF824850B8600E3E5AE /* ViewController.swift in Sources */,
+				0449EBF824850B8600E3E5AE /* AuthViewController.swift in Sources */,
+				0470DDC924854C0F0056A146 /* FireDB.swift in Sources */,
+				0470DDC5248547A10056A146 /* FireAuth.swift in Sources */,
+				0470DDCB24854C4B0056A146 /* Credentials.swift in Sources */,
 				0449EBF424850B8600E3E5AE /* AppDelegate.swift in Sources */,
 				0449EBF624850B8600E3E5AE /* SceneDelegate.swift in Sources */,
+				0470DDC724854BD50056A146 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +274,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0449EBFA24850B8600E3E5AE /* Base */,
+				0449EC0824850EDF00E3E5AE /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -159,6 +283,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0449EBFF24850B8D00E3E5AE /* Base */,
+				0449EC0924850EDF00E3E5AE /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -170,6 +295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -216,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -230,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -270,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,11 +409,13 @@
 		};
 		0449EC0524850B8D00E3E5AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2AF4E515EADF3945CEECF24 /* Pods-FacebookStories.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29H6X27A9A;
 				INFOPLIST_FILE = FacebookStories/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +429,13 @@
 		};
 		0449EC0624850B8D00E3E5AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ED9DE6EF521A577D78CB77B /* Pods-FacebookStories.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29H6X27A9A;
 				INFOPLIST_FILE = FacebookStories/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
