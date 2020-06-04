@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,7 +48,7 @@
                                     <action selector="validateBtnDidPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="olq-wk-c52"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJu-lL-NnJ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" background="eye" catalog="system" disabledBackground="eye.fill" translatesAutoresizingMaskIntoConstraints="NO" id="SJu-lL-NnJ">
                                 <rect key="frame" x="20" y="213" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="9Ti-i7-tZH"/>
@@ -68,7 +69,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="1jG-yN-y6l"/>
                                 </constraints>
-                                <color key="textColor" name="BlackGrey"/>
+                                <color key="textColor" name="Black"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
@@ -111,7 +112,7 @@
                         <outlet property="passwordTF" destination="SJu-lL-NnJ" id="dNQ-mQ-v6V"/>
                         <outlet property="segmentedControl" destination="NYp-mS-V8c" id="rdn-YQ-WL3"/>
                         <outlet property="validateBtn" destination="X3a-ao-KVu" id="Xbc-nm-8b6"/>
-                        <segue destination="pfp-gz-F0N" kind="show" identifier="segueToMain" id="kWL-sb-Ubj"/>
+                        <segue destination="XkQ-gh-MuV" kind="presentation" identifier="segueToMain" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="kWL-sb-Ubj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -136,7 +137,98 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </scene>
-        <!--Main View Controller-->
+        <!--View Controller-->
+        <scene sceneID="MfM-Fw-Mws">
+            <objects>
+                <viewController id="uWl-IM-Ryz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZMa-5a-jak">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hle-7F-ina">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yG9-et-hSt">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="50" height="206"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qDX-ao-WqK">
+                                        <rect key="frame" x="0.0" y="206" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zap-jw-LMJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iZu-wT-JiN">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="206"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-cover" translatesAutoresizingMaskIntoConstraints="NO" id="15d-of-Qj0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="206"/>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-profile" translatesAutoresizingMaskIntoConstraints="NO" id="7gi-Cq-S4X">
+                                            <rect key="frame" x="18" y="60" width="128" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="mfk-Xn-eEY"/>
+                                                <constraint firstAttribute="width" constant="128" id="phf-nj-gOG"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pseudo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOP-6F-S0G">
+                                            <rect key="frame" x="166" y="167" width="230" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="yeQ-NX-lrW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="15d-of-Qj0" secondAttribute="trailing" id="0nS-np-b9U"/>
+                                        <constraint firstItem="BOP-6F-S0G" firstAttribute="leading" secondItem="7gi-Cq-S4X" secondAttribute="trailing" constant="20" id="3fg-29-gPx"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7gi-Cq-S4X" secondAttribute="bottom" constant="10" id="ERh-ol-PDF"/>
+                                        <constraint firstItem="7gi-Cq-S4X" firstAttribute="leading" secondItem="iZu-wT-JiN" secondAttribute="leadingMargin" constant="10" id="End-XA-T4W"/>
+                                        <constraint firstItem="15d-of-Qj0" firstAttribute="leading" secondItem="iZu-wT-JiN" secondAttribute="leading" id="Vvg-tm-bnA"/>
+                                        <constraint firstAttribute="bottom" secondItem="15d-of-Qj0" secondAttribute="bottom" id="a7t-29-EPC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="BOP-6F-S0G" secondAttribute="bottom" constant="10" id="f7a-5U-ecW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="BOP-6F-S0G" secondAttribute="trailing" constant="10" id="jzo-6W-3TA"/>
+                                        <constraint firstItem="15d-of-Qj0" firstAttribute="top" secondItem="iZu-wT-JiN" secondAttribute="top" id="lYo-jd-YHf"/>
+                                    </constraints>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RWX-Lz-KQE" firstAttribute="trailing" secondItem="Hle-7F-ina" secondAttribute="trailing" id="CYv-VA-TdE"/>
+                            <constraint firstItem="RWX-Lz-KQE" firstAttribute="bottom" secondItem="Hle-7F-ina" secondAttribute="bottom" id="IZO-Gf-eLR"/>
+                            <constraint firstItem="Hle-7F-ina" firstAttribute="top" secondItem="RWX-Lz-KQE" secondAttribute="top" id="dxe-jf-Xet"/>
+                            <constraint firstItem="Hle-7F-ina" firstAttribute="leading" secondItem="RWX-Lz-KQE" secondAttribute="leading" id="uhA-wJ-hGO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RWX-Lz-KQE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="C15-wU-nMo">
+                        <barButtonItem key="leftBarButtonItem" title="Déconnexion" id="JR9-EC-emJ">
+                            <color key="tintColor" name="Blue Facebook"/>
+                            <connections>
+                                <segue destination="mX9-ZB-mgG" kind="unwind" unwindAction="unwindToAuthWithSegue:" id="eF6-oz-boc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Poster" image="picto-write" id="IdX-aY-gsL">
+                            <color key="tintColor" name="Blue Facebook"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DwD-MC-Jni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="mX9-ZB-mgG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3713.04347826087" y="876.5625"/>
+        </scene>
+        <!--Accueil-->
         <scene sceneID="8Eq-gC-wNZ">
             <objects>
                 <viewController id="pfp-gz-F0N" customClass="MainViewController" customModule="FacebookStories" customModuleProvider="target" sceneMemberID="viewController">
@@ -146,6 +238,7 @@
                         <color key="backgroundColor" name="Background Grey"/>
                         <viewLayoutGuide key="safeArea" id="EWl-ri-3lR"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Accueil" image="picto-home" id="odP-S1-jkJ"/>
                     <navigationItem key="navigationItem" id="Nbz-eF-ZgT">
                         <barButtonItem key="leftBarButtonItem" title="Déconnexion" id="msA-Cl-hKu">
                             <color key="tintColor" name="Blue Facebook"/>
@@ -160,17 +253,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDI-c7-ATN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1893" y="115"/>
+            <point key="canvasLocation" x="2802.898550724638" y="114.50892857142857"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="c16-ZC-IA9">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="XkQ-gh-MuV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TTu-Od-ahp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="White"/>
+                        <color key="selectedImageTintColor" name="Blue Facebook"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pfp-gz-F0N" kind="relationship" relationship="viewControllers" id="hbq-F1-5Gd"/>
+                        <segue destination="ECn-zI-7gv" kind="relationship" relationship="viewControllers" id="leq-N8-qb2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WBD-Ph-E50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892.753623188406" y="114.50892857142857"/>
+        </scene>
+        <!--Profil-->
+        <scene sceneID="RyE-rE-Ppn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ECn-zI-7gv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profil" image="picto-profile" id="6ZV-I1-cxM">
+                        <color key="badgeColor" name="Blue Facebook"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vyn-Eh-Tcz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uWl-IM-Ryz" kind="relationship" relationship="rootViewController" id="Vim-X8-mzG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXY-pW-gDq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2802.898550724638" y="876.5625"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo FacebookStories Blue" width="256" height="256"/>
+        <image name="empty-cover" width="800" height="400"/>
+        <image name="empty-profile" width="200" height="200"/>
+        <image name="eye" catalog="system" width="128" height="81"/>
+        <image name="eye.fill" catalog="system" width="128" height="78"/>
+        <image name="picto-home" width="22" height="22"/>
+        <image name="picto-profile" width="22" height="22"/>
+        <image name="picto-write" width="22" height="22"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="Background Grey">
             <color red="0.91399997472763062" green="0.92199999094009399" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="BlackGrey">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Blue Facebook">
             <color red="0.2199999988079071" green="0.3449999988079071" blue="0.59600001573562622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

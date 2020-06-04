@@ -10,5 +10,6 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Auth' 
 pod 'Firebase/Storage'
 pod 'Firebase/Firestore'
+pod 'SDWebImage', '~> 5.0'
 
 end

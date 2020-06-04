@@ -14,6 +14,7 @@
 		0449EBFD24850B8D00E3E5AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0449EBFC24850B8D00E3E5AE /* Assets.xcassets */; };
 		0449EC0024850B8D00E3E5AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0449EBFE24850B8D00E3E5AE /* LaunchScreen.storyboard */; };
 		0456A7DA24852F390096DFB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0456A7D924852F390096DFB9 /* GoogleService-Info.plist */; };
+		0463C5522488EF4200429516 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463C5512488EF4200429516 /* ExtensionUIViewController.swift */; };
 		0470DDC5248547A10056A146 /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470DDC4248547A10056A146 /* FireAuth.swift */; };
 		0470DDC724854BD50056A146 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470DDC624854BD50056A146 /* MainViewController.swift */; };
 		0470DDC924854C0F0056A146 /* FireDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470DDC824854C0F0056A146 /* FireDB.swift */; };
@@ -33,6 +34,7 @@
 		0449EC0824850EDF00E3E5AE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		0449EC0924850EDF00E3E5AE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		0456A7D924852F390096DFB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0463C5512488EF4200429516 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
 		0470DDC4248547A10056A146 /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
 		0470DDC624854BD50056A146 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0470DDC824854C0F0056A146 /* FireDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDB.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				0449EBFC24850B8D00E3E5AE /* Assets.xcassets */,
 				0449EBF524850B8600E3E5AE /* SceneDelegate.swift */,
 				0449EBF324850B8600E3E5AE /* AppDelegate.swift */,
+				0463C5512488EF4200429516 /* ExtensionUIViewController.swift */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				0470DDC924854C0F0056A146 /* FireDB.swift in Sources */,
 				0470DDC5248547A10056A146 /* FireAuth.swift in Sources */,
 				0470DDCB24854C4B0056A146 /* Credentials.swift in Sources */,
+				0463C5522488EF4200429516 /* ExtensionUIViewController.swift in Sources */,
 				0449EBF424850B8600E3E5AE /* AppDelegate.swift in Sources */,
 				0449EBF624850B8600E3E5AE /* SceneDelegate.swift in Sources */,
 				0470DDC724854BD50056A146 /* MainViewController.swift in Sources */,

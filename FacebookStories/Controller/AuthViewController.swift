@@ -105,6 +105,16 @@ class AuthViewController: UIViewController {
         setupUI()
     }
     
+    @IBAction func unwindToAuth(segue: UIStoryboardSegue){
+        if let error = FireAuth().signOut() {
+                 let alertVC = UIAlertController(title: "Erreur !", message: error, preferredStyle: .alert)
+                 alertVC.addAction(UIAlertAction(title: "J’ai compris", style: .default, handler: nil))
+                 present(alertVC, animated: true, completion: nil)
+                 return
+             }
+              print("DECONNEXION")
+    }
+    
     
     private func setupUI() {
         let isConnexionSegment = segmentedControl.selectedSegmentIndex == 0
@@ -115,11 +125,11 @@ class AuthViewController: UIViewController {
        print("TITLE : ", title)
     }
 
-    private func presentAlert(title: String, message: String) {
-        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "J’ai compris", style: .default, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
+//    private func presentAlert(title: String, message: String) {
+//        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        alertVC.addAction(UIAlertAction(title: "J’ai compris", style: .default, handler: nil))
+//        present(alertVC, animated: true, completion: nil)
+//    }
 
 
 }
