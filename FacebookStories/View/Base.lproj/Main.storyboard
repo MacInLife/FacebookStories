@@ -80,11 +80,47 @@
                                     <constraint firstAttribute="width" constant="128" id="gJJ-jU-Dgw"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNc-TR-h4n">
+                                <rect key="frame" x="351" y="221" width="33" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="7E8-4H-tOD"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="20" id="ITn-3F-Pjt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="KRZ-sR-kC7"/>
+                                    <constraint firstAttribute="height" constant="20" id="Rhn-yg-VJt"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="33" id="Sez-AE-AfQ"/>
+                                    <constraint firstAttribute="width" constant="33" id="xs0-23-iLd"/>
+                                </constraints>
+                                <color key="tintColor" name="Grey"/>
+                                <state key="normal" image="picto-eye-slash">
+                                    <color key="titleColor" name="BlackGrey"/>
+                                </state>
+                                <connections>
+                                    <action selector="eyeClosedBtnDidPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eqQ-AT-Fhv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3Q-DV-jbV">
+                                <rect key="frame" x="351" y="223" width="33" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="3hw-8S-QcV"/>
+                                    <constraint firstAttribute="height" constant="16" id="GvL-Xa-EoG"/>
+                                    <constraint firstAttribute="width" constant="33" id="chE-cc-HF9"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="dNq-rN-kjg"/>
+                                </constraints>
+                                <color key="tintColor" name="Grey"/>
+                                <state key="normal" image="picto-eye">
+                                    <color key="titleColor" name="BlackGrey"/>
+                                </state>
+                                <connections>
+                                    <action selector="eyeBtnDidPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c2Y-Iv-6mh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Background Grey"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n3Q-DV-jbV" secondAttribute="trailing" constant="30" id="6V8-N2-k0h"/>
                             <constraint firstItem="of2-iS-GuB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9XG-Nl-Tyd"/>
                             <constraint firstItem="SJu-lL-NnJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AQx-WQ-Hdz"/>
+                            <constraint firstItem="n3Q-DV-jbV" firstAttribute="top" secondItem="elA-4H-ofb" secondAttribute="bottom" constant="30" id="Cum-6c-wu6"/>
                             <constraint firstItem="ok5-jI-8rN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Frf-kf-1Xh"/>
                             <constraint firstItem="of2-iS-GuB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LhG-ek-ovH"/>
                             <constraint firstItem="elA-4H-ofb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VqK-i2-oLq"/>
@@ -98,16 +134,20 @@
                             <constraint firstItem="NYp-mS-V8c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kkQ-OO-qbH"/>
                             <constraint firstItem="of2-iS-GuB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lUC-JM-BcF"/>
                             <constraint firstItem="elA-4H-ofb" firstAttribute="top" secondItem="NYp-mS-V8c" secondAttribute="bottom" constant="20" id="loI-a4-3Hb"/>
+                            <constraint firstItem="yNc-TR-h4n" firstAttribute="top" secondItem="elA-4H-ofb" secondAttribute="bottom" constant="28" id="nyd-l1-ZtZ"/>
                             <constraint firstItem="NYp-mS-V8c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="pac-OF-kym"/>
                             <constraint firstItem="SJu-lL-NnJ" firstAttribute="top" secondItem="elA-4H-ofb" secondAttribute="bottom" constant="20" id="qee-9f-GNE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NYp-mS-V8c" secondAttribute="trailing" constant="20" id="tMh-bW-BNA"/>
                             <constraint firstItem="of2-iS-GuB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="y2f-B0-fdZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yNc-TR-h4n" secondAttribute="trailing" constant="30" id="zWb-DF-yh2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bienvenue" id="LFY-ge-gtU"/>
                     <connections>
                         <outlet property="emailTF" destination="elA-4H-ofb" id="MWA-1d-gbs"/>
+                        <outlet property="eye" destination="n3Q-DV-jbV" id="dP5-h7-Ydg"/>
+                        <outlet property="eyeClosed" destination="yNc-TR-h4n" id="dz1-La-VCX"/>
                         <outlet property="nicknameTF" destination="ok5-jI-8rN" id="nCL-6V-2EN"/>
                         <outlet property="passwordTF" destination="SJu-lL-NnJ" id="dNQ-mQ-v6V"/>
                         <outlet property="segmentedControl" destination="NYp-mS-V8c" id="rdn-YQ-WL3"/>
@@ -303,6 +343,8 @@
         <image name="empty-profile" width="200" height="200"/>
         <image name="eye" catalog="system" width="128" height="81"/>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
+        <image name="picto-eye" width="88" height="47"/>
+        <image name="picto-eye-slash" width="88" height="62"/>
         <image name="picto-home" width="22" height="22"/>
         <image name="picto-profile" width="22" height="22"/>
         <image name="picto-write" width="22" height="22"/>
@@ -313,8 +355,14 @@
         <namedColor name="Black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="BlackGrey">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Blue Facebook">
             <color red="0.2199999988079071" green="0.3449999988079071" blue="0.59600001573562622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

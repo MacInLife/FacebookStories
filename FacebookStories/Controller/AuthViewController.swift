@@ -17,6 +17,9 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var nicknameTF: UITextField!
     @IBOutlet weak var validateBtn: UIButton!
     
+    @IBOutlet weak var eyeClosed: UIButton!
+    @IBOutlet weak var eye: UIButton!
+    
 //  1. Créer une nouvelle collection avec le signUp()
 //  2. Créer une troisième vue pour créer un nouveau Credential
 //  3. Sauvegarder le Credential
@@ -40,6 +43,18 @@ class AuthViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // Masquer le clavier
         view.endEditing(true)
+    }
+    
+    @IBAction func eyeClosedBtnDidPressed(_ sender: Any) {
+         self.passwordTF.isSecureTextEntry =  true
+         self.eyeClosed.alpha = 0
+         self.eye.alpha = 1
+        
+    }
+    @IBAction func eyeBtnDidPressed(_ sender: Any) {
+          self.passwordTF.isSecureTextEntry =  false
+        self.eye.alpha = 0
+         self.eyeClosed.alpha = 1
     }
 
 // Liaison avec la vue, élément d'Action
