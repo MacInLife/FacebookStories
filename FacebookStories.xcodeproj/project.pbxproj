@@ -18,7 +18,11 @@
 		0470DDC5248547A10056A146 /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470DDC4248547A10056A146 /* FireAuth.swift */; };
 		0470DDC724854BD50056A146 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470DDC624854BD50056A146 /* MainViewController.swift */; };
 		0470DDC924854C0F0056A146 /* FireDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470DDC824854C0F0056A146 /* FireDB.swift */; };
-		0470DDCB24854C4B0056A146 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470DDCA24854C4B0056A146 /* Credentials.swift */; };
+		04E09E97249209E100EAEB61 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E09E96249209E000EAEB61 /* ProfileViewController.swift */; };
+		04E09E9C24921AA000EAEB61 /* ProfilePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E09E9B24921AA000EAEB61 /* ProfilePostCell.swift */; };
+		04E09E9E249224DD00EAEB61 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E09E9D249224DD00EAEB61 /* ProfileHeaderView.swift */; };
+		04E09EA02492271800EAEB61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E09E9F2492271800EAEB61 /* User.swift */; };
+		04E09EA2249228FA00EAEB61 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E09EA1249228FA00EAEB61 /* Post.swift */; };
 		8FD1CC8E59482EE877948C35 /* Pods_FacebookStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E75F4607695B9A97364864 /* Pods_FacebookStories.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +42,11 @@
 		0470DDC4248547A10056A146 /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
 		0470DDC624854BD50056A146 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0470DDC824854C0F0056A146 /* FireDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDB.swift; sourceTree = "<group>"; };
-		0470DDCA24854C4B0056A146 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		04E09E96249209E000EAEB61 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		04E09E9B24921AA000EAEB61 /* ProfilePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostCell.swift; sourceTree = "<group>"; };
+		04E09E9D249224DD00EAEB61 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		04E09E9F2492271800EAEB61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		04E09EA1249228FA00EAEB61 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		7ED9DE6EF521A577D78CB77B /* Pods-FacebookStories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookStories.release.xcconfig"; path = "Target Support Files/Pods-FacebookStories/Pods-FacebookStories.release.xcconfig"; sourceTree = "<group>"; };
 		A2AF4E515EADF3945CEECF24 /* Pods-FacebookStories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookStories.debug.xcconfig"; path = "Target Support Files/Pods-FacebookStories/Pods-FacebookStories.debug.xcconfig"; sourceTree = "<group>"; };
 		C9E75F4607695B9A97364864 /* Pods_FacebookStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacebookStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +112,7 @@
 			children = (
 				0449EBF724850B8600E3E5AE /* AuthViewController.swift */,
 				0470DDC624854BD50056A146 /* MainViewController.swift */,
+				04E09E96249209E000EAEB61 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -111,6 +120,7 @@
 		0449EC0B24850EF800E3E5AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04E09E9A24921A7800EAEB61 /* Cells */,
 				0449EBF924850B8600E3E5AE /* Main.storyboard */,
 			);
 			path = View;
@@ -121,9 +131,19 @@
 			children = (
 				0470DDC4248547A10056A146 /* FireAuth.swift */,
 				0470DDC824854C0F0056A146 /* FireDB.swift */,
-				0470DDCA24854C4B0056A146 /* Credentials.swift */,
+				04E09E9F2492271800EAEB61 /* User.swift */,
+				04E09EA1249228FA00EAEB61 /* Post.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		04E09E9A24921A7800EAEB61 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				04E09E9B24921AA000EAEB61 /* ProfilePostCell.swift */,
+				04E09E9D249224DD00EAEB61 /* ProfileHeaderView.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3B166FBAD10778D6E272F9C9 /* Pods */ = {
@@ -262,10 +282,14 @@
 			files = (
 				0449EBF824850B8600E3E5AE /* AuthViewController.swift in Sources */,
 				0470DDC924854C0F0056A146 /* FireDB.swift in Sources */,
+				04E09E9E249224DD00EAEB61 /* ProfileHeaderView.swift in Sources */,
 				0470DDC5248547A10056A146 /* FireAuth.swift in Sources */,
-				0470DDCB24854C4B0056A146 /* Credentials.swift in Sources */,
+				04E09EA2249228FA00EAEB61 /* Post.swift in Sources */,
 				0463C5522488EF4200429516 /* ExtensionUIViewController.swift in Sources */,
 				0449EBF424850B8600E3E5AE /* AppDelegate.swift in Sources */,
+				04E09E97249209E100EAEB61 /* ProfileViewController.swift in Sources */,
+				04E09EA02492271800EAEB61 /* User.swift in Sources */,
+				04E09E9C24921AA000EAEB61 /* ProfilePostCell.swift in Sources */,
 				0449EBF624850B8600E3E5AE /* SceneDelegate.swift in Sources */,
 				0470DDC724854BD50056A146 /* MainViewController.swift in Sources */,
 			);

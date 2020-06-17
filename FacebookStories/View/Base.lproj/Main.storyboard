@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="MfM-Fw-Mws">
             <objects>
-                <viewController id="uWl-IM-Ryz" sceneMemberID="viewController">
+                <viewController id="uWl-IM-Ryz" customClass="ProfileViewController" customModule="FacebookStories" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZMa-5a-jak">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,16 +195,34 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qDX-ao-WqK">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCell" id="qDX-ao-WqK" customClass="ProfilePostCell" customModule="FacebookStories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="206" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zap-jw-LMJ">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-profile" translatesAutoresizingMaskIntoConstraints="NO" id="f5M-d2-HFG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="128" id="CRE-ya-FKR"/>
+                                                        <constraint firstAttribute="width" constant="128" id="L4B-sq-6BH"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="f5M-d2-HFG" firstAttribute="top" secondItem="zap-jw-LMJ" secondAttribute="top" id="A9a-c1-fcM"/>
+                                                <constraint firstAttribute="bottom" secondItem="f5M-d2-HFG" secondAttribute="bottom" id="JzQ-Hf-FUy"/>
+                                                <constraint firstItem="f5M-d2-HFG" firstAttribute="leading" secondItem="zap-jw-LMJ" secondAttribute="leading" id="hBp-bR-Gub"/>
+                                                <constraint firstAttribute="trailing" secondItem="f5M-d2-HFG" secondAttribute="trailing" id="vd2-dG-vxZ"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="postImageView" destination="f5M-d2-HFG" id="zME-ju-Xgg"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iZu-wT-JiN">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerCell" id="iZu-wT-JiN" customClass="ProfileHeaderView" customModule="FacebookStories" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="206"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -239,7 +257,15 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="BOP-6F-S0G" secondAttribute="trailing" constant="10" id="jzo-6W-3TA"/>
                                         <constraint firstItem="15d-of-Qj0" firstAttribute="top" secondItem="iZu-wT-JiN" secondAttribute="top" id="lYo-jd-YHf"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="avatarImageView" destination="7gi-Cq-S4X" id="APK-JD-zFn"/>
+                                        <outlet property="coverImageView" destination="15d-of-Qj0" id="0tr-rc-ocZ"/>
+                                        <outlet property="nicknameLabel" destination="BOP-6F-S0G" id="RcD-5T-xGR"/>
+                                    </connections>
                                 </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="uWl-IM-Ryz" id="jp8-jJ-i7n"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -260,8 +286,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Poster" image="picto-write" id="IdX-aY-gsL">
                             <color key="tintColor" name="Blue Facebook"/>
+                            <connections>
+                                <action selector="writeBtnDidPressed:" destination="uWl-IM-Ryz" id="ndS-Pj-41e"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="Hle-7F-ina" id="CYc-Z4-pgh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DwD-MC-Jni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="mX9-ZB-mgG" userLabel="Exit" sceneMemberID="exit"/>

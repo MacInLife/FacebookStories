@@ -16,35 +16,23 @@ class FireDB {
     var users : CollectionReference {
         return store.collection("users")
     }
-    //A l'ajout, crée une collection des Password (
-      var credentials : CollectionReference {
-          return store.collection("credentials")
-      }
+  
     func addUser(_ uid: String, data: [String: Any]) {
         users.document(uid).setData(data)
     }
-    func addCredentials(data: [String: Any], completion: @escaping (_ error: String?) -> Void) {
-        guard let uid = FireAuth().currentId else {
-        completion("Erreur, vous n'etes pas connecté !")
-        return
-        }
-        users.document(uid).collection("credentialsCollection").document().setData(data) { (error) in
+    func getUser(withUid uid: String, completion: @escaping (String?, User?) -> Void){
+        users.document(uid).addSnapshotListener { (document, error) in
             if let error = error {
-                completion(error.localizedDescription)
+                completion(error.localizedDescription, nil)
                 return
             }
-            completion(nil)
+           guard let document = document else {
+              completion("Utilisateur non trouvé", nil)
+            return
+            }
+            completion(nil, User(document: document))
         }
     }
-    func getCredentialsCollection(completion: @escaping ([Credentials]?, String?) -> Void){
-        //Récupération uid
-        guard let uid = FireAuth().currentId else {
-            completion(nil, "Erreur, vous n'etes pas connecté !")
-            return
-       }
-//        users.document(uid).collection("credentialsCollection").addSnapshotListener { (snapshot, error) in
-//
-//        }
-    }
+
 
 }
