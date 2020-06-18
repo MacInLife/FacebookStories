@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController {
     
     var postImage : UIImage?
     var user: User?
+    var headerView: ProfileHeaderView?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -32,9 +33,11 @@ class ProfileViewController: UIViewController {
             }
             self.user = user
             print("Utilisateur :", user.nickname)
+            self.collectionView.reloadData()
         }
     }
-      
+    
+
         // Do any additional setup after loading the view.
     
     
@@ -67,6 +70,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         // postImage pourra ainsi transmettre l’image à la méthode prepare(for segue)
         // Pour rappel, c’est prepare(for segue) qui devra transmettre l’image au contrôleur suivant
         self.postImage = image
+        FireStorage().sendImage()
 
         // Lancer la segue vers le contrôleur suivant
         // Après cela, il restera à écrire l’override de la méthode prepare(for segue)
@@ -127,6 +131,7 @@ extension ProfileViewController: UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as? ProfilePostCell else {
+            print("postCell :")
              return UICollectionViewCell()
          }
 
@@ -136,4 +141,33 @@ extension ProfileViewController: UICollectionViewDataSource {
 
          return cell
      }
+  
+    //HEADER
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? ProfileHeaderView else {
+            print("ERREUR : viewForSupplementaryElementOfKind")
+            return UICollectionReusableView()
+        }
+          print("VOIR :")
+        if let user = user  {
+               print("USER ? :")
+               headerView.setUp(user: user, profileViewController: self)
+        }
+     
+        print("USER : ", user)
+        
+        //Return du bon header
+        return headerView
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+       return CGSize(width: collectionView.frame.width, height: 160)
+       }
+}
+
+extension ProfileViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: (collectionView.frame.width / 3) - 2, height: (collectionView.frame.width / 3) - 2)
+    }
 }
