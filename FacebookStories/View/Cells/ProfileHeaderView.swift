@@ -14,16 +14,17 @@ class ProfileHeaderView: UICollectionReusableView {
     @IBOutlet weak var nicknameLabel: UILabel!
     var user: User?
     var profileViewController: ProfileViewController?
-    
+ 
     func setUp(user:User, profileViewController: ProfileViewController){
         self.user = user
         self.profileViewController = profileViewController
         nicknameLabel.text = user.nickname
         //Chargement des images via SDWebImage (gestionnaire qui s'occupe des images, charger image [asynchrone], plus faire du cache)
-        //ImageLoader().load(stringUrl: user.avatarImageUrl, imageView: avatarImageView)
-        //ImageLoader().load(stringUrl: user.coverImageUrl, imageView: coverImageView)
+        ImageLoader().load(stringurl: user.avatarImageUrl, imageView: avatarImageView)
+        ImageLoader().load(stringurl: user.coverImageUrl, imageView: coverImageView)
         
     }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first
@@ -39,15 +40,16 @@ class ProfileHeaderView: UICollectionReusableView {
         case coverImageView:
             print("COVER IMAGE :")
             //Lancer l'action sheet du ProfilViewController
+            profileViewController?.photoType = .coverImageView
             profileViewController?.presentActionSheet()
-            //profileViewController.photoType = .coverImageView
-            //profileViewController.chosePhotoSource()
         case avatarImageView:
             print("AVATAR IMAGE :")
+             profileViewController?.photoType = .avatarImageView
             profileViewController?.presentActionSheet()
+             
         case nicknameLabel:
             print("NICKNAME : ")
-            //profileViewController.updateNickname()
+            profileViewController?.updateNickname()
         default:
             print("DEFAULT : ")
         }

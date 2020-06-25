@@ -10,11 +10,10 @@ import Foundation
 import SDWebImage
 
 class ImageLoader{
-    func load(stringUrl: String?, imageView: UIImageView){
-        guard let stringUrl = stringUrl, let url = URL(string: stringUrl) else {
+     func load(stringurl: String?, imageView: UIImageView){
+          guard let stringurl = stringurl, let url = URL(string: stringurl) else{
             return
-        }
-        imageView.sd_setImage(with: url, completed: nil)
-        
-    }
+          }
+          imageView.sd_setImage(with: url, completed: nil)
+      }
 }

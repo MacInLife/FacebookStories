@@ -13,6 +13,12 @@ class ProfileViewController: UIViewController {
     var postImage : UIImage?
     var user: User?
     var headerView: ProfileHeaderView?
+    var photoType: PhotoType?
+     enum PhotoType{
+         case coverImageView , avatarImageView
+        case postImage
+     }
+     
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -35,6 +41,7 @@ class ProfileViewController: UIViewController {
             print("Utilisateur :", user.nickname)
             self.collectionView.reloadData()
         }
+        
     }
     
 
@@ -45,6 +52,29 @@ class ProfileViewController: UIViewController {
         presentActionSheet()
     }
     
+    func updateNickname() {
+        guard let uid = FireAuth().currentId else {
+        dismiss(animated: true, completion: nil)
+        return
+        }
+        let alertVC = UIAlertController(title: "Modifier votre pseudo", message: nil, preferredStyle: .alert)
+        alertVC.addTextField { (textField) in
+            textField.placeholder = "Tapez ici votre nouveau pseudo"
+        }
+        alertVC.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+        alertVC.addAction(UIAlertAction(title: "Modifier", style: .default, handler: { (action) in
+            if let nickname = alertVC.textFields?.first?.text {
+                FireDB().updateUser(withUid: uid, data: ["nickname": nickname]) { (error) in
+                    if let error = error {
+                        self.presentAlert(title: "Erreur !", message: error)
+                        return
+                    }
+                    self.headerView?.nicknameLabel.text = nickname
+                }
+            }
+        }))
+        present(alertVC, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
@@ -60,21 +90,50 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // Quitter la vue modale de l’Image Picker
         dismiss(animated: true, completion: nil)
-
+        
         // Récupérer l’image fournie par l’UIImagePickerController
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            return
-        }
-
+             guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+                 return
+             }
+         print("IMAGE", image)
+            guard let uid = FireAuth().currentId else {
+                     dismiss(animated: true, completion: nil)
+                     return
+                 }
         // Transmettre l’image à une propriété de ProfileViewController (postImage)
         // postImage pourra ainsi transmettre l’image à la méthode prepare(for segue)
         // Pour rappel, c’est prepare(for segue) qui devra transmettre l’image au contrôleur suivant
         self.postImage = image
-        FireStorage().sendImage()
-
+        let ref = FireStorage().profileImageRef(uid: uid)
+        FireStorage().sendImage(ref:  ref , image: image) { (error, url) in
+                   if let error = error {
+                       self.presentAlert(title: "error", message: "error")
+                       return
+                   }
+                   guard let photoType = self.photoType else{
+                       return
+                   }
+                    var key: String
+                   switch photoType {
+                   case .coverImageView:
+                       key = "coverImageUrl"
+                   case .avatarImageView:
+                       key = "avatarImageUrl"
+                   case .postImage:
+                     key = "postImage"
+            }
+                    print("KEY: ", key)
+                  // mettre a jour propriété url image
+                   FireDB().updateUser(withUid: uid, data: [key: url], completion: { (error) in
+                       if let error = error {
+                           self.presentAlert(title: "error", message: "error ")
+                           return
+                       }
+                   })
+        }
         // Lancer la segue vers le contrôleur suivant
         // Après cela, il restera à écrire l’override de la méthode prepare(for segue)
-//        performSegue(withIdentifier: "segueToWrite", sender: nil)
+        // performSegue(withIdentifier: "segueToWrite", sender: nil)
         print(image)
     }
     func imagePickerControllerDidCancel(){}
@@ -96,6 +155,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
 
         // Créer de l’Action Sheet
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+      
 
         // Ajouter les trois boutons précédemment créés
         alert.addAction(photoLibraryAction)
@@ -141,6 +201,12 @@ extension ProfileViewController: UICollectionViewDataSource {
 
          return cell
      }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item == 0 {
+            photoType = .postImage
+        }
+        presentActionSheet()
+    }
   
     //HEADER
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

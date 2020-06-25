@@ -33,6 +33,16 @@ class FireDB {
             completion(nil, User(document: document))
         }
     }
+      func updateUser(withUid uid: String, data: [String:Any], completion: @escaping (String? ) -> Void){
+          users.document(uid).updateData(data) { (error) in
+              if let error = error {
+                  completion(error.localizedDescription)
+                  return
+              }
+              completion(nil)
+          }
+
+      }
 
 
 }
